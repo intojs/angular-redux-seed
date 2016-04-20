@@ -1,0 +1,41 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+a[ui-sref],
+a[ng-click] {
+  cursor: pointer;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+.app-loader {
+  position: fixed;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  background: url("../assets/clock.svg") no-repeat center center;
+}
+input::-ms-clear {
+  display: none;
+}
+/**
+ *	--- Components ---
+ */
+.todo-completed {
+  text-decoration: line-through;
+}
+/**
+ *	--- Views ---
+ */

@@ -1,0 +1,53 @@
+@app: "../app";
+@assets: "../assets";
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+	display: none !important;
+}
+
+a[ui-sref],
+a[ng-click] { 
+    cursor: pointer;
+}
+
+html {
+	height: 100%;
+}
+
+body { 
+	min-height: 100%;
+}
+
+.app-loader {
+	position: fixed;
+	z-index: 1000;
+	width: 100px;
+	height: 100px;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+	background: url("@{assets}/clock.svg") no-repeat center center;	
+}
+
+@import url("ie-fix.less");
+
+/**
+ *	--- Components ---
+ */
+
+@import url("@{app}/components/todo/todo.less");
+@import url("@{app}/components/add-todo/add-todo.less");
+@import url("@{app}/components/filters/filters.less");
+@import url("@{app}/components/todo-list/todo-list.less");
+
+/**
+ *	--- Views ---
+ */
+
+@import url("@{app}/routes/home/home.less");

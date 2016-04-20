@@ -1,2 +1,1 @@
-# angular-redux-seed
-Angular One Redux Seed
+Welcome to the Angular One Redux JSPM Seed
