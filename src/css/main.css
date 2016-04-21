@@ -33,6 +33,12 @@ input::-ms-clear {
 /**
  *	--- Components ---
  */
+.active {
+  text-decoration: default;
+}
+.inactive {
+  text-decoration: none;
+}
 .todo-completed {
   text-decoration: line-through;
 }

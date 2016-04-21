@@ -1,3 +1,3 @@
 <ul>
-	<todo ng-repeat="todo in vm.todos track by $index" id="todo.id" completed="todo.completed">{{todo.text}}</todo>
+	<todo ng-repeat="todo in vm.todos | visibleTodos:vm.currentFilter track by $index" id="todo.id" completed="todo.completed">{{todo.text}}</todo>
 </ul>

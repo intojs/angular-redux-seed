@@ -3,15 +3,36 @@ import filterLinkTpl from './filter-link.tpl.html!text';
 
 class FilterLinkCtrl {
     
-    constructor() {
+    constructor($scope, store, todoActions) {
+    	this.$scope = $scope;
+    	this.store = store;
+    	this.todoActions = todoActions;
+
+    	this.unsubscribe = this.store.subscribe(() => this.updateActive());
+    	
+    	this.ngOnInit();
+
+    	this.$scope.$on('$destroy', this.ngOnDestroy.bind(this));
+    }
+
+    ngOnInit() {
+    	this.updateActive();
+    }
+    
+    ngOnDestroy() {
+    	this.unsubscribe();
     }
 
     applyFilter(filter) {
-    	console.log(filter);
+    	this.store.dispatch(this.todoActions.setCurrentFilter(this.filter));
+    }
+
+    updateActive() {
+    	this.active = (this.filter == this.store.getState().todo.currentFilter);
     }
 }
 
-FilterLinkCtrl.$inject = [];
+FilterLinkCtrl.$inject = ['$scope', 'store', 'todoActions'];
 
 var filterLink = function() {
  	return {
